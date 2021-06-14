@@ -32,6 +32,49 @@ namespace StackQueue
             Console.WriteLine("{0} pushed to stack ", value);
         }
         /// <summary>
+        /// peek from the stack
+        /// </summary>
+        internal void Peek()
+        {
+            //if top is null
+            if (this.top == null)
+            {
+                //stack is empty
+                Console.WriteLine("Stack is empty");
+                return;
+            }
+            // value is in the top of the stack
+            Console.WriteLine("{0} is in the top of the stack ", this.top.data);
+        }
+        /// <summary>
+        ///  Pop from the stack 
+        /// </summary>
+        internal void Pop()
+        {
+            //if top is null
+            if (this.top == null)
+            {
+                // stack is empty 
+                Console.WriteLine("Stack is empty, Deletion is not possible");
+                return;
+            }
+            //otherwise value is popped is value
+            Console.WriteLine("Value popped is {0} ", this.top.data);
+            //next 
+            this.top = this.top.next;
+        }
+        /// <summary>
+        /// is empty
+        /// </summary>
+        internal void IsEmpty()
+        {
+            while (this.top != null)
+            {
+                Peek();
+                Pop();
+            }
+        }
+        /// <summary>
         /// method to display all the elements of stack.
         /// </summary>
         public void Display()
